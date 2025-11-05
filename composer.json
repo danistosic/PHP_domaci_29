@@ -1,0 +1,16 @@
+{
+    "name": "danie/php_composer28",
+    "autoload": {
+        "psr-4": {
+            "PHP_COMPOSER28\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "danistosic",
+            "email": "programiranje.dany@gmail.com"
+        }
+    ],
+    "require": {}
+}
+

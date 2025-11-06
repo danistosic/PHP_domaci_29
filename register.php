@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prijava</title>
+  <title>Registracija</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -15,16 +15,16 @@
       align-items: center;
     }
 
-    .login-container {
+    .register-container {
       background-color: white;
       padding: 40px;
       border-radius: 15px;
       box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-      width: 320px;
+      width: 340px;
       text-align: center;
     }
 
-    .login-container h2 {
+    .register-container h2 {
       margin-bottom: 20px;
       color: #333;
     }
@@ -71,29 +71,30 @@
       background-color: #4653c5;
     }
 
-    .register-link {
+    .login-link {
       margin-top: 15px;
       font-size: 14px;
     }
 
-    .register-link a {
+    .login-link a {
       color: #5563DE;
       text-decoration: none;
     }
 
-    .register-link a:hover {
+    .login-link a:hover {
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div class="login-container">
-    <h2>Prijava</h2>
-    <form action="decisionMaker.php" method="POST">
-        <input type="hidden" name="login" />
+  <div class="register-container">
+    <h2>Registracija</h2>
+    <form method="POST" action="decisionMaker.php">
+      <input type="hidden" name="register" />
+
       <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Unesite email" required>
+        <label for="username">Korisničko ime</label>
+        <input type="text" id="username" name="username" placeholder="Unesite korisničko ime" required>
       </div>
 
       <div class="form-group">
@@ -101,13 +102,15 @@
         <input type="password" id="password" name="password" placeholder="Unesite lozinku" required>
       </div>
 
-      <button type="submit">Prijavi se</button>
+      <div class="form-group">
+        <label for="confirm-password">Potvrdi lozinku</label>
+        <input type="password" id="confirm-password" name="confirm_password" placeholder="Ponovite lozinku" required>
+      </div>
 
-      <p class="register-link">Nemaš račun? <a href="#">Registriraj se</a></p>
+      <button type="submit">Registriraj se</button>
+
+      <p class="login-link">Već imaš račun? <a href="login.php">Prijavi se</a></p>
     </form>
   </div>
 </body>
 </html>
-
-
-

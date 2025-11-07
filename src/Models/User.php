@@ -2,7 +2,16 @@
 
 namespace PHP_COMPOSER28\Models;
 
-class User {
+class User
+{
+    private $connection;
+
+    public function __construct()
+    {
+        $db = new Db();
+        $this->connection = $db->connection;
+    }
+
     public function userExists(string $username): bool
     {
         $stmt = $this->connection->prepare("SELECT * FROM users WHERE username = :name");
@@ -29,6 +38,7 @@ class User {
         $stmt->execute();
     }
 }
+
 
 
 

@@ -4,6 +4,8 @@ namespace PHP_COMPOSER28\Controllers;
 
 use PHP_COMPOSER28\Models\User;
 use PHP_COMPOSER28\Services\SessionService;
+use PHP_COMPOSER28\Services\MailService;
+
 
 class UserController extends SessionService {
     public function login(array $data)
@@ -56,6 +58,10 @@ class UserController extends SessionService {
         
         
         $userModel->addNewUser($data['username'], $password);
+
+        $mailService = new MailService();
+        $mailService->sendMail(subject: "Registracija uspesna!", text: "Uspesno ste se registrovali! Dobrodosli na nasu platformu");
+
     }
 }
 

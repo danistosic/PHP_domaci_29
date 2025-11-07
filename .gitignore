@@ -1,0 +1,16 @@
+# --- PHP / Composer ---
+vendor/
+.env
+credentials.txt
+/composer.lock
+
+# --- IDE / OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Logs / Cache ---
+*.log
+*.cache
+
